@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CryptoM5 - Clone Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#6b2fa3;
+      --muted:#777;
+      --border:#d6d6d6;
+      --max:880px;
+      --bg:#0f0f12;
+      --card:#fff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Nunito",system-ui,Arial;
+      background:linear-gradient(#0b0b0b,#111);
+      display:flex;
+      justify-content:center;
+      padding:30px 12px;
+      color:#222;
+    }
+    .site{
+      width:100%;
+      max-width:var(--max);
+      background:var(--card);
+      border:4px solid var(--border);
+      padding:14px;
+    }
+    header{display:flex;align-items:center;justify-content:space-between}
+    header h1{margin:0;font-weight:800}
+    nav a{margin-left:12px;color:var(--muted);text-decoration:none;font-size:14px}
+    .hero{display:flex;gap:16px;margin:14px 0}
+    .hero-left{flex:1}
+    .hero-right{width:360px}
+    .hero-right img{width:100%;height:190px;object-fit:cover;border:1px solid var(--border)}
+    .hero-left h2{margin:0 0 8px;font-size:20px}
+    .hero-left p{color:var(--muted);margin:0 0 12px}
+    .btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:0;cursor:pointer}
+
+    .section{border:1px solid var(--border);padding:12px;margin-top:12px}
+    .section-title{text-align:center;font-weight:700;margin:0 0 8px}
+
+    /* features */
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .feat{border:1px solid var(--border);padding:10px;text-align:center;background:#fbfbfb}
+
+    /* about */
+    .about p{color:var(--muted);font-size:14px}
+
+    /* traders */
+    .traders{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .card{border:1px solid var(--border);text-align:center;background:#fff;padding-bottom:8px}
+    .card img{width:100%;height:180px;object-fit:cover}
+    .card h4{margin:8px 0 4px}
+    .card p{margin:0 8px;color:var(--muted);font-size:13px}
+    .socials{display:flex;justify-content:center;gap:6px;margin-top:8px}
+    .socials a{font-size:12px;text-decoration:none;padding:4px 6px;border:1px solid var(--border);border-radius:4px;color:var(--muted)}
+
+    /* skills */
+    .skills .row{display:flex;align-items:center;gap:12px;margin:8px 0}
+    .bar{flex:1;height:8px;background:#eee;border-radius:8px;overflow:hidden}
+    .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#9b59b6);width:60%}
+
+    /* pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .plan{border:1px solid var(--border);padding:12px;text-align:center}
+
+    /* top traders */
+    .top-grid{border:1px solid var(--border);padding:8px}
+    .tt{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .tt-item{display:flex;gap:8px;align-items:center;padding:6px;border-bottom:1px solid #f0f0f0}
+    .tt-item img{width:48px;height:48px;border-radius:6px;object-fit:cover}
+
+    /* video */
+    .video{background:#ececec;padding:12px;text-align:center}
+    .video iframe{width:100%;height:360px;border:0;border-radius:6px}
+
+    /* articles */
+    .articles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .article{border:1px solid var(--border);text-align:center;padding:8px}
+    .article img{width:100%;height:110px;object-fit:cover}
+
+    /* clients */
+    .clients{display:flex;gap:10px;align-items:center;justify-content:center;padding:8px;border:1px solid var(--border)}
+    .clients img{height:36px;opacity:0.8}
+
+    /* contact map */
+    .bottom{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-top:12px}
+    .contact{background:#f6f6f6;padding:12px;border:1px solid var(--border)}
+    .contact input,.contact textarea{width:100%;padding:8px;margin:8px 0;border:1px solid var(--border);border-radius:4px}
+    .map iframe{width:100%;height:220px;border:0}
+
+    footer{text-align:center;color:var(--muted);padding:10px;margin-top:12px;border-top:1px solid var(--border)}
+
+    @media (max-width:920px){
+      .features{grid-template-columns:repeat(2,1fr)}
+      .traders{grid-template-columns:repeat(2,1fr)}
+      .articles{grid-template-columns:repeat(2,1fr)}
+      .pricing{grid-template-columns:1fr}
+      .bottom{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .features{grid-template-columns:1fr}
+      .traders{grid-template-columns:1fr}
+      .articles{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <h1>CryptoM5</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-left">
+        <h2>Crypto Trade Agency</h2>
+        <p>Professional trading, secure wallets and smart strategies to grow your crypto portfolio.</p>
+        <button class="btn">Get Started</button>
+      </div>
+      <div class="hero-right">
+        <!-- bitcoin banner (Unsplash dynamic) -->
+        <img src="https://cdn.pixabay.com/photo/2018/02/26/20/46/bitcoin-3183979_1280.png" alt="Bitcoin Banner">
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="section">
+      <h3 class="section-title">Our Features</h3>
+      <div class="features" style="margin-top:10px">
+        <div class="feat"><strong>Wallets</strong><p style="color:var(--muted)">Secure wallet solutions.</p></div>
+        <div class="feat"><strong>Trade</strong><p style="color:var(--muted)">Fast trade engine.</p></div>
+        <div class="feat"><strong>Exchange</strong><p style="color:var(--muted)">Multiple pairs.</p></div>
+        <div class="feat"><strong>Processing</strong><p style="color:var(--muted)">Quick withdrawals.</p></div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="section about">
+      <h3 class="section-title">About US</h3>
+      <div style="border-top:1px solid var(--border);padding-top:10px">
+        <p>CryptoM5 is a demo crypto agency built for exam/practice. We provide wallet, exchange and trading services. This page replicates a typical agency landing layout, including traders, pricing and more.</p>
+      </div>
+    </div>
+
+    <!-- Traders -->
+    <div class="section">
+      <h3 class="section-title">Our Traders</h3>
+      <div class="traders" style="margin-top:12px">
+        <div class="card">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="">
+          <h4>John Smith</h4>
+          <p>Senior Trader</p>
+          <div class="socials"><a href="#">fb</a><a href="#">tw</a><a href="#">in</a></div>
+        </div>
+        <div class="card">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="">
+          <h4>Jane Smith</h4>
+          <p>Trader</p>
+          <div class="socials"><a href="#">fb</a><a href="#">tw</a><a href="#">in</a></div>
+        </div>
+        <div class="card">
+          <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="">
+          <h4>Arjun</h4>
+          <p>Analyst</p>
+          <div class="socials"><a href="#">fb</a><a href="#">tw</a><a href="#">in</a></div>
+        </div>
+        <div class="card">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+          <h4>Rani</h4>
+          <p>Research</p>
+          <div class="socials"><a href="#">fb</a><a href="#">tw</a><a href="#">in</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section skills">
+      <h3 class="section-title">Our Skills</h3>
+      <div style="margin-top:8px">
+        <div class="row"><div style="width:100px">Analysis</div><div class="bar"><span style="width:75%"></span></div></div>
+        <div class="row"><div style="width:100px">Trading</div><div class="bar"><span style="width:60%"></span></div></div>
+        <div class="row"><div style="width:100px">Strategy</div><div class="bar"><span style="width:85%"></span></div></div>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="section">
+      <h3 class="section-title">Pricing Plan</h3>
+      <div class="pricing" style="margin-top:12px">
+        <div class="plan">
+          <h4>Free</h4><div style="font-weight:800;font-size:18px;margin:6px 0">₹ 0 /mo</div>
+          <p style="color:var(--muted)">Basic features</p>
+          <ul style="text-align:left;color:var(--muted)"><li>Wallet</li><li>Basic Reporting</li></ul>
+        </div>
+        <div class="plan">
+          <h4>Pro</h4><div style="font-weight:800;font-size:18px;margin:6px 0">₹ 799 /mo</div>
+          <p style="color:var(--muted)">Advanced</p>
+          <ul style="text-align:left;color:var(--muted)"><li>Advanced Tools</li><li>Priority Support</li></ul>
+        </div>
+        <div class="plan">
+          <h4>Team</h4><div style="font-weight:800;font-size:18px;margin:6px 0">₹ 1999 /mo</div>
+          <p style="color:var(--muted)">Team access</p>
+          <ul style="text-align:left;color:var(--muted)"><li>Multi-user</li><li>Account Manager</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Traders -->
+    <div class="section">
+      <h3 class="section-title">Top Traders</h3>
+      <div class="top-grid" style="margin-top:8px">
+        <div class="tt">
+          <div class="tt-item"><img src="https://randomuser.me/api/portraits/men/12.jpg"><div><strong>Arun</strong><div style="font-size:13px;color:var(--muted)">2.9 BTC</div></div></div>
+          <div class="tt-item"><img src="https://randomuser.me/api/portraits/women/21.jpg"><div><strong>Riya</strong><div style="font-size:13px;color:var(--muted)">2.4 BTC</div></div></div>
+          <div class="tt-item"><img src="https://randomuser.me/api/portraits/men/45.jpg"><div><strong>Sam</strong><div style="font-size:13px;color:var(--muted)">2.1 BTC</div></div></div>
+        </div>
+        <div style="margin-top:8px">
+          <!-- repeated mini grid for more rows -->
+          <div class="tt">
+            <div class="tt-item"><img src="https://randomuser.me/api/portraits/women/12.jpg"><div><strong>Nita</strong><div style="font-size:13px;color:var(--muted)">1.9 BTC</div></div></div>
+            <div class="tt-item"><img src="https://randomuser.me/api/portraits/men/22.jpg"><div><strong>Vik</strong><div style="font-size:13px;color:var(--muted)">1.8 BTC</div></div></div>
+            <div class="tt-item"><img src="https://randomuser.me/api/portraits/women/34.jpg"><div><strong>Kira</strong><div style="font-size:13px;color:var(--muted)">1.7 BTC</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Section -->
+<div class="section video">
+  <h3 class="section-title">Watch Our YouTube Demo</h3>
+  <iframe src="https://www.youtube.com/live/NXkCq-1TXVk?si=2F3Q-kXiqRLyoA64" title="Crypto Demo" allowfullscreen></iframe>
+</div>
+    <!-- Articles -->
+    <div class="section">
+      <h3 class="section-title">Our Article</h3>
+      <div class="articles" style="margin-top:8px">
+        <div class="article">
+          <img src="https://cdn.pixabay.com/photo/2017/08/14/14/38/bitcoin-2640692_1280.png" alt="">
+          <h4>Crypto Wallet</h4><p style="color:var(--muted);font-size:13px">Read More</p>
+        </div>
+        <div class="article">
+          <img src="https://cdn.pixabay.com/photo/2021/02/17/13/47/bitcoin-6024248_1280.jpg" alt="">
+          <h4>Margin Trade</h4><p style="color:var(--muted);font-size:13px">Read More</p>
+        </div>
+        <div class="article">
+          <img src="https://cdn.pixabay.com/photo/2021/08/18/13/57/bitcoin-6555612_1280.jpg" alt="">
+          <h4>Exchange</h4><p style="color:var(--muted);font-size:13px">Read More</p>
+        </div>
+        <div class="article">
+          <img src="https://cdn.pixabay.com/photo/2021/11/20/14/51/btc-6812103_1280.jpg" alt="">
+          <h4>Cryptocurrency</h4><p style="color:var(--muted);font-size:13px">Read More</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our Clients -->
+    <div class="section clients" aria-hidden="true">
+      <img src="https://cdn.pixabay.com/photo/2020/09/18/22/05/man-5583035_1280.jpg" alt="">
+      <img src="https://cdn.pixabay.com/photo/2019/10/22/13/43/man-4568761_1280.jpg" alt="">
+      <img src="https://cdn.pixabay.com/photo/2020/09/18/22/05/man-5583034_1280.jpg" alt="">
+      <img src="https://cdn.pixabay.com/photo/2020/03/20/18/52/fashion-4951644_1280.jpg" alt="">
+    </div>
+	
+
+    <!-- Contact + Map -->
+    <div class="bottom">
+      <div class="contact">
+        <h3>Hold or Trade Cryptocurrency</h3>
+        <p style="color:var(--muted)">Contact our team to get started with secure trading and wallet services.</p>
+        <form onsubmit="event.preventDefault(); alert('Demo: message sent')">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea rows="4" placeholder="Message"></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="map">
+        <!-- Google Maps embed for Surat, India (works in iframe) -->
+        <iframe src="https://www.google.com/maps?q=surat+india&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <footer>© 2025 Crypto M5 — Demo clone (images loaded from online sources)</footer>
+  </div>
+</body>
+</html>
