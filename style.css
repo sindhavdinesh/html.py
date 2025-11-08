@@ -1,128 +1,79 @@
-/* Reset-ish */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Page background to mimic printed sheet look */
+/* Body */
 body {
-  background: #efefef;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  color: #222;
-  padding: 28px 12px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Paper/card wrapper (narrow column like your doc) */
-.paper {
-  width: 720px;           /* adjust if you want wider/narrower */
-  border: 3px solid #111;
+/* Container */
+.container {
   background: #fff;
-  padding: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-/* inner content padding */
-.content {
-  border: 1px solid #333;
-  padding: 14px;
-}
-
-/* small "Output:" label on top */
-.label {
-  font-size: 13px;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-/* ---------- HERO / PARALLAX ---------- */
-.hero{
-  height: 220px; /* adjust height */
-  margin-bottom: 12px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #ddd;
-  background-image: url('images/hero.jpg'); /* <-- change to your image filename */
-  background-size: cover;
-  background-position: center;
-  /* Parallax effect: background-attachment fixed produces parallax on desktop */
-  background-attachment: fixed;
-}
-
-/* thin dark overlay and centered tiny text */
-.hero-overlay{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 6px;
+  width: 80%;
+  max-width: 900px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
-  font-size: 12px;
-  color: #eee;
-  background: rgba(0,0,0,0.4);
-  padding: 6px 8px;
-  font-weight: 600;
-  letter-spacing: 0.6px;
 }
 
-/* ---------- GRADIENT SECTIONS ---------- */
-.gradient{
-  height: 140px;
-  margin-bottom: 12px;
-  position: relative;
-  border: 1px solid rgba(0,0,0,0.08);
-}
-
-/* small label inside each section (left-top) */
-.section-label{
-  position: absolute;
-  left: 8px;
-  top: 6px;
-  font-size: 11px;
-  color: rgba(255,255,255,0.9);
-  font-weight: 600;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-}
-
-/* linear gradient block */
-.linear{
-  background: linear-gradient(90deg, #ff8a65 0%, #ff6f61 40%, #f78f52 100%);
-}
-
-/* radial gradient block (deep blue center / edges) */
-.radial{
-  background: radial-gradient(circle at 50% 50%, #1e3a8a 0%, #13306b 50%, #0f254a 100%);
-}
-
-/* conic gradient block */
-.conic{
-  background: conic-gradient(from 90deg at 50% 50%, #ff6b6b, #ffd166, #845ef7, #ff6b6b);
-}
-
-/* ---------- Highlight strip (thin) ---------- */
-.highlight{
-  height: 28px;
-  margin: 10px 0;
-  padding: 4px 8px;
-  border: 2px solid #f0e68c;
-  background: linear-gradient(90deg, #fffbe6 0%, #fff2c4 100%);
-  font-size: 12px;
+/* Heading */
+.container h2 {
+  margin-bottom: 25px;
+  font-size: 20px;
   color: #333;
 }
 
-/* ---------- Parent box footer ---------- */
-.parent-box{
-  margin-top: 8px;
-  padding: 22px 12px;
-  border-top: 2px solid #ddd;
-  text-align: center;
-  background: #fafafa;
+/* Grid layout */
+.product-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
-.parent-box h3{
-  margin-bottom: 8px;
+/* Product card */
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 180px;
+  background-color: #fafafa;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image fix */
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Text */
+.product-card h3 {
+  margin-top: 10px;
   font-size: 16px;
 }
 
-/* responsive: on small screens remove background-attachment fixed (mobile) */
-@media (max-width: 600px){
-  .paper { width: 100%; padding: 10px; }
-  .hero { background-attachment: scroll; }
+.product-card p {
+  color: #444;
+  font-weight: bold;
+  margin-top: 5px;
 }
