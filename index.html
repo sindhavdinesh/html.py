@@ -3,175 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartMart - Product Section</title>
+  <title>Lab Work 11.1 - CSS Selectors</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header class="header">
-    <h1>E-Grocery Super Market</h1>
-    <input type="text" placeholder="Search E-Grocery Super Market">
-  </header>
+  <h1>Output:</h1>
 
-  <div class="top-bar">
-    <p>26 Products found</p>
-    <select>
-	
-      <option>Sort by: Featured</option>
-      <option>Sort by: Price</option>
-      <option>Sort by: Rating</option>
-    </select>
+  <div class="article">
+    <h2><span>A</span>rticle 1: Introduction To CSS</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed cursus turpis. 
+      Proin dictum velit at ante venenatis, id gravida metus fermentum.
+    </p>
+    <p class="highlight">
+      Vestibulum convallis orci non volutpat efficitur.
+    </p>
+    <p>
+      Quisque aliquet purus ut nunc volutpat, et bibendum enim laoreet. Integer fermentum augue id quam ullamcorper, 
+      sit amet malesuada lectus auctor.
+    </p>
+    <p class="note">Great article! Learned a lot about CSS selectors.</p>
   </div>
 
-  <section class="product-grid">
-    <!-- Product 1 -->
-    <div class="product-card">
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img1.jpg" alt="Haldiram's Sev Bhujia">
-      <p class="category">Snacks & Namkeen</p>
-      <h3>Haldiram's Sev Bhujia</h3>
-      <div class="price">
-        <span class="new">₹210.6</span>
-        <span class="old">₹280</span>
-        <span class="discount">10% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.8</div>
-      <button class="add-btn">+ Add</button>
-    </div>
+  <div class="article">
+    <h2><span>A</span>rticle 2: Understanding Box Model</h2>
+    <p>
+      In this article, we’ll explore the CSS box model, a fundamental concept in web design. 
+      The box model dictates how the dimensions of elements are calculated.
+    </p>
+    <p class="highlight">
+      Understanding margins, borders, padding, and content is essential to mastering CSS.
+    </p>
+    <p>
+      By the end of this article, you’ll have a clear understanding of how the box model works in CSS.
+    </p>
+    <p class="note">Box model is one of the most important concepts for layout design.</p>
+  </div>
 
-    <!-- Product 2 -->
-    <div class="product-card">
-	
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img2.jpg" alt="NutriChoice Digestive">
-      <p class="category">Bakery & Biscuits</p>
-      <h3>NutriChoice Digestive</h3>
-      <div class="price">
-        <span class="new">₹300</span>
-        <span class="old">₹500</span>
-        <span class="discount">15% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.6</div>
-      <button class="add-btn">+ Add</button>
-    </div>
+  <div class="article">
+    <h2><span>A</span>rticle 3: Advanced CSS Selectors</h2>
+    <p>
+      CSS selectors provide powerful ways to target and style elements on a webpage. 
+      Learn about various CSS selectors like pseudo-classes and pseudo-elements.
+    </p>
+    <p>
+      Selectors such as <em>:nth-child()</em> or <em>::selection</em> give you fine-grained control over styling elements.
+    </p>
+    <p>
+      These selectors can be used to enhance your website’s UI and improve the user experience.
+    </p>
+  </div>
 
-    <!-- Product 3 -->
-    <div class="product-card">
-	
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img3.jpg" alt="Cadbury 5 Star Chocolate">
-      <p class="category">Bakery & Biscuits</p>
-      <h3>Cadbury 5 Star Chocolate</h3>
-      <div class="price">
-        <span class="new">₹500</span>
-        <span class="old">₹800</span>
-        <span class="discount">12% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.7</div>
-      <button class="add-btn">+ Add</button>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="product-card">
-	
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img4.jpg" alt="Lays Potato Chips">
-      <p class="category">Snacks & Munchies</p>
-      <h3>Lays Potato Chips</h3>
-      <div class="price">
-        <span class="new">₹50</span>
-        <span class="old">₹60</span>
-        <span class="discount">8% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.4</div>
-      <button class="add-btn">+ Add</button>
-    </div>
-
-    <!-- Product 5 -->
-    <div class="product-card">
-	
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img5.jpg" alt="ACT II Popcorn">
-      <p class="category">Instant Food</p>
-      <h3>ACT II Instant Popcorn</h3>
-      <div class="price">
-        <span class="new">₹200</span>
-        <span class="old">₹299</span>
-        <span class="discount">7% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.2</div>
-      <button class="add-btn">+ Add</button>
-    </div>
-
-    <!-- Product 6 -->
-    <div class="product-card">
-	
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img6.jpg" alt="Amul Butter">
-      <p class="category">Dairy Products</p>
-      <h3>Amul Butter</h3>
-      <div class="price">
-        <span class="new">₹300</span>
-        <span class="old">₹400</span>
-        <span class="discount">10% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.9</div>
-      <button class="add-btn">+ Add</button>
-    </div>
-
-    <!-- Product 7 -->
-    <div class="product-card">
-	
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img7.jpg" alt="Blueberry Greek Yogurt">
-      <p class="category">Dairy & Eggs</p>
-      <h3>Blueberry Greek Yogurt</h3>
-      <div class="price">
-        <span class="new">₹200</span>
-        <span class="old">₹300</span>
-        <span class="discount">10% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.3</div>
-      <button class="add-btn">+ Add</button>
-    </div>
-
-    <!-- Product 8 -->
-    <div class="product-card">
-	
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img8.jpg" alt="Maggi Noodles">
-      <p class="category">Instant Food</p>
-      <h3>Maggi Noodles</h3>
-      <div class="price">
-        <span class="new">₹100</span>
-        <span class="old">₹200</span>
-        <span class="discount">10% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.5</div>
-      <button class="add-btn">+ Add</button>
-    </div>
-
-    <!-- Product 9 -->
-    <div class="product-card">
-	
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img9.jpg" alt="Kellogg's Corn Flakes">
-      <p class="category">Breakfast & Cereals</p>
-      <h3>Kellogg's Corn Flakes</h3>
-      <div class="price">
-        <span class="new">₹300</span>
-        <span class="old">₹400</span>
-        <span class="discount">10% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.6</div>
-      <button class="add-btn">+ Add</button>
-    </div>
-
-    <!-- Product 10 -->
-    <div class="product-card">
-	
-      <img src="C:\Html.py\Html.py\SmartMart project\imaige\img10.jpg" alt="Tata Tea Premium">
-      <p class="category">Beverages</p>
-      <h3>Tata Tea Premium</h3>
-      <div class="price">
-        <span class="new">₹400</span>
-        <span class="old">₹600</span>
-        <span class="discount">12% OFF</span>
-      </div>
-      <div class="rating"><i class="fa fa-star"></i> 4.9</div>
-      <button class="add-btn">+ Add</button>
-    </div>
-  </section>
 </body>
 </html>

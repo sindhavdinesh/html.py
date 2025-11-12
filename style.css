@@ -1,117 +1,76 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
 body {
-  background: #f7f7f7;
-  color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
   padding: 20px;
 }
 
-/* Header */
-.header {
+h1 {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
-.header input {
-  padding: 10px 15px;
-  width: 60%;
-  margin-top: 10px;
+
+.article {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 15px 25px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Top bar */
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 0 20px;
-}
-.top-bar select {
-  padding: 8px;
-  border-radius: 5px;
+.article h2 {
+  font-size: 22px;
+  color: #333;
 }
 
-/* Product Grid */
-.product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* Product Card */
-.product-card {
-  background: white;
-  border-radius: 12px;
-  padding: 15px;
-  width: 220px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: 0.3s;
-}
-.product-card:hover {
-  transform: scale(1.05);
-}
-
-.product-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-.category {
-  color: #777;
-  font-size: 13px;
-  margin-top: 8px;
-}
-
-.price {
-  margin: 8px 0;
-}
-.price .new {
-  color: #28a745;
-  font-weight: bold;
-  font-size: 18px;
-}
-.price .old {
-  text-decoration: line-through;
-  color: #999;
-  margin-left: 5px;
-}
-.price .discount {
+.article h2 span {
   color: #e74c3c;
-  margin-left: 5px;
-  font-size: 13px;
+  font-size: 36px;
+  font-weight: bold;
 }
 
-.rating {
-  color: #f4b400;
-  margin: 5px 0;
+.article p {
+  line-height: 1.5;
+  color: #444;
+  margin: 10px 0;
 }
 
-.add-btn {
-  background: linear-gradient(90deg, #1e90ff, #28a745);
-  border: none;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.add-btn:hover {
-  background: linear-gradient(90deg, #28a745, #1e90ff);
+/* Highlighted line in yellow */
+.article p.highlight {
+  background-color: #fff9c4;
+  padding: 4px 6px;
+  display: inline-block;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .product-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Green note box */
+.article p.note {
+  background-color: #d1f7d1;
+  border-left: 5px solid #4caf50;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* Styling first and last paragraph */
+.article p:first-of-type {
+  color: #333;
+}
+
+.article p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Hover effect */
+.article:hover {
+  transform: scale(1.01);
+  transition: 0.3s ease-in-out;
+  background-color: #fefefe;
+}
+
+/* Alternate background for every even article */
+.article:nth-child(even) {
+  background-color: #f9f9f9;
 }
