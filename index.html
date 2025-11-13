@@ -3,56 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab Work 11.1 - CSS Selectors</title>
+  <title>Sticky Notes Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Output:</h1>
+  <header class="header">
+    <h1>Sticky Notes Dashboard</h1>
+  </header>
 
-  <div class="article">
-    <h2><span>A</span>rticle 1: Introduction To CSS</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed cursus turpis. 
-      Proin dictum velit at ante venenatis, id gravida metus fermentum.
-    </p>
-    <p class="highlight">
-      Vestibulum convallis orci non volutpat efficitur.
-    </p>
-    <p>
-      Quisque aliquet purus ut nunc volutpat, et bibendum enim laoreet. Integer fermentum augue id quam ullamcorper, 
-      sit amet malesuada lectus auctor.
-    </p>
-    <p class="note">Great article! Learned a lot about CSS selectors.</p>
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <ul>
+        <li>Personal</li>
+        <li>Work</li>
+        <li>Ideas</li>
+        <li>Reminders</li>
+      </ul>
+    </aside>
+
+    <main class="notes-area">
+      <div class="note yellow">
+        <h4>📋 Meeting Notes</h4>
+        <p>Project deadline is next Monday. Final review due Friday.</p>
+      </div>
+
+      <div class="note green">
+        <h4>🛒 Grocery List</h4>
+        <p>Milk, Eggs, Bread, Coffee, Fruits</p>
+      </div>
+
+      <div class="note orange">
+        <h4>💡 App Idea</h4>
+        <p>Reminder app with voice and image input. Offline sync tool.</p>
+      </div>
+
+      <div class="note blue">
+        <h4>🎯 Today’s Goals</h4>
+        <ol>
+          <li>Finish UI</li>
+          <li>Record Demo</li>
+          <li>Send feedback</li>
+        </ol>
+      </div>
+    </main>
   </div>
 
-  <div class="article">
-    <h2><span>A</span>rticle 2: Understanding Box Model</h2>
-    <p>
-      In this article, we’ll explore the CSS box model, a fundamental concept in web design. 
-      The box model dictates how the dimensions of elements are calculated.
-    </p>
-    <p class="highlight">
-      Understanding margins, borders, padding, and content is essential to mastering CSS.
-    </p>
-    <p>
-      By the end of this article, you’ll have a clear understanding of how the box model works in CSS.
-    </p>
-    <p class="note">Box model is one of the most important concepts for layout design.</p>
-  </div>
-
-  <div class="article">
-    <h2><span>A</span>rticle 3: Advanced CSS Selectors</h2>
-    <p>
-      CSS selectors provide powerful ways to target and style elements on a webpage. 
-      Learn about various CSS selectors like pseudo-classes and pseudo-elements.
-    </p>
-    <p>
-      Selectors such as <em>:nth-child()</em> or <em>::selection</em> give you fine-grained control over styling elements.
-    </p>
-    <p>
-      These selectors can be used to enhance your website’s UI and improve the user experience.
-    </p>
-  </div>
-
-</body>
-</html>
+  <footer class="footer">
+    <button>Add Note</button>
+    <button class="delete">Delete All</butt
