@@ -1,114 +1,146 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #e9e9e9;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Main container */
+.container {
+    background: white;
+    width: 800px;
+    padding-bottom: 50px;
+    border: 3px solid #000;
 }
 
 /* Header */
 .header {
-  background-color: #2d3e50;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 20px;
-  font-weight: bold;
+    background: #202020;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    padding: 20px 0;
 }
 
-/* Container */
-.container {
-  display: flex;
-  height: calc(100vh - 100px);
-  background-color: #eef2f5;
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #444;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 220px;
-  background-color: #f7f7f7;
-  padding: 20px;
-  border-right: 2px solid #ccc;
-  position: sticky;
-  top: 0;
-  height: 100%;
+/* ---------------- Profile Cards ---------------- */
+
+.profile-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }
 
-.sidebar h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
+.card {
+    background: white;
+    width: 160px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.sidebar ul {
-  list-style: none;
+.card:hover {
+    transform: translateY(-10px);
 }
 
-.sidebar li {
-  padding: 6px 0;
-  font-size: 15px;
-  color: #333;
+/* Profile image fixed */
+.card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Notes Area */
-.notes-area {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 30px;
-  justify-content: flex-start;
+/* ---------------- Flashcards ---------------- */
+
+.flashcards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }
 
-/* Individual Notes */
-.note {
-  width: 200px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  background-color: #fff;
-  transition: transform 0.2s ease;
+.flash {
+    background: #ffeb91;
+    padding: 18px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.note:hover {
-  transform: scale(1.05);
+.flash:hover {
+    transform: scale(1.05);
 }
 
-.note h4 {
-  margin-bottom: 10px;
+/* ---------------- Buttons ---------------- */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }
 
-.note p, .note ol {
-  font-size: 14px;
+.blue {
+    padding: 12px 30px;
+    background: #4c91ff;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    transition: .3s;
+    cursor: pointer;
 }
 
-/* Note Colors */
-.yellow { background-color: #fff8a6; }
-.green  { background-color: #c6f7c3; }
-.orange { background-color: #fcd9a6; }
-.blue   { background-color: #b7d8f7; }
-
-/* Footer */
-.footer {
-  background-color: #2d3e50;
-  padding: 10px 20px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+.blue:hover {
+    transform: translateX(8px);
 }
 
-.footer button {
-  background-color: #f0f0f0;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
+.purple {
+    padding: 12px 30px;
+    background: #7f4cff;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(140,0,255,0.5);
 }
 
-.footer button.delete {
-  background-color: #ff6961;
-  color: white;
+.purple:hover {
+    box-shadow: 0 0 18px rgba(140,0,255,0.9);
+}
+
+/* ---------------- Gallery ---------------- */
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ALL gallery images equal size */
+.gallery img {
+    width: 200px;        /* FIXED PERFECT SIZE */
+    height: 130px;       /* FIXED PERFECT SIZE */
+    object-fit: cover;   /* Crop and fit perfectly */
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.07);
 }
